@@ -1,0 +1,1 @@
+curl http://bashwars.vsfi.org/ -s | awk '{print $1, $2}' | cut -d'>' -f2 | cut -d'<' -f1 | tr -d '+' | grep "\S" | awk 'NR%2{printf "%s ",$0;next;}1' | awk '{print $3, $1, $2}' | sort -r | tail -57 | grep -v "07"
